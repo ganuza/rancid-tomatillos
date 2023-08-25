@@ -10,7 +10,7 @@ function App() {
     <div>
       {/* <h1>{movieData.movies[0].title}</h1>
       <img src={movieData.movies[0].poster_path} /> */}
-      < Movies movies={movies}/>
+      <Movies movies={movies}/>
     </div>
   )
 }
