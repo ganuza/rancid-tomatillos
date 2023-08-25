@@ -1,10 +1,15 @@
 import './App.css';
 import { useState } from 'react';
+import movieData from './movieData';
 
 function App() {
-  return (
-    <h1></h1>
+  const [movies, setMovies] = useState(movieData.movies);
 
+  return (
+    <div>
+      <h1>{movieData.movies[0].title}</h1>
+      <img src={movieData.movies[0].poster_path} />
+    </div>
   )
 }
 
