@@ -1,7 +1,7 @@
 import "./MovieBox.css";
 import MovieCard from "./MovieCard";
 
-function Movies({ movies }) {
+function Movies({ movies, showIndividualMovie }) {
   // console.log('movies', movies)
   const movieCards = movies.map((movie) => {
     return (
@@ -9,6 +9,7 @@ function Movies({ movies }) {
         key={movie.id}
         img={movie.poster_path}
         id={movie.id}
+        showIndividualMovie={showIndividualMovie}
       />
     )
   })
