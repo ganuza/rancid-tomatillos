@@ -5,7 +5,6 @@ function SingleMovie({ individualMovie }) {
   
   return (
     <div className="single-movie-cont">
-      <h2>Hello</h2>
       <SingleMovieCard
         title={individualMovie.title}
         backdrop_path={individualMovie.backdrop_path}
