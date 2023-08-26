@@ -1,9 +1,9 @@
 import "./MovieCard.css";
 
-function MovieCard({ img, id }) {
+function MovieCard({ img, id, showIndividualMovie }) {
   return (
     <div className="movie-card">
-      <img className="movie-img" src={img} />
+      <button onClick={()=> showIndividualMovie(id)}><img className="movie-img" src={img} /></button>
     </div>
   )
 }
