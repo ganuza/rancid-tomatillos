@@ -3,6 +3,7 @@ import { useState } from 'react';
 import movieData from './movieData';
 import Movies from './MovieBox';
 import SingleMovie from './SingleMovieCont'
+import Header from './Header'
 
 function App() {
   const [movies, setMovies] = useState(movieData.movies);
@@ -17,6 +18,7 @@ function App() {
   return (
     
     <div>
+      <Header />
       {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
       {individualMovie && <SingleMovie individualMovie={individualMovie} />}
     </div>
