@@ -2,21 +2,23 @@ import './App.css';
 import { useState } from 'react';
 import movieData from './movieData';
 import Movies from './MovieBox';
+import SingleMovie from './SingleMovieCont'
 
 function App() {
   const [movies, setMovies] = useState(movieData.movies);
   const [individualMovie, setIndividualMovie] = useState(null)
 
   function showIndividualMovie(id) {
-    const individualMovie = movies.find(movie => movie.id === id)
-    setIndividualMovie(individualMovie)
+    const selectedMovie = movies.find(movie => movie.id === id)
+    setIndividualMovie(selectedMovie)
   }
 
+
   return (
+    
     <div>
-      {/* <h1>{movieData.movies[0].title}</h1>
-      <img src={movieData.movies[0].poster_path} /> */}
-      <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>
+      {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
+      {individualMovie && <SingleMovie individualMovie={individualMovie} />}
     </div>
   )
 }
