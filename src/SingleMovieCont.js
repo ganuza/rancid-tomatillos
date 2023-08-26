@@ -11,6 +11,10 @@ function SingleMovie({ individualMovie }) {
         id={individualMovie.id}
         average_rating={individualMovie.average_rating}
         release_date={individualMovie.release_date}
+        overview={individualMovie.overview}
+        tagline={individualMovie.tagline}
+        runtime={individualMovie.runtime}
+        genres={individualMovie.genres}
       />
     </div>
   )
