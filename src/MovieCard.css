@@ -1,8 +1,14 @@
 .movie-card {
   box-sizing: border-box;
-  border: 1.5px solid red;
 }
+
 .movie-img {
+  border: 1.5px solid red;
   height: 100%;
   width: 100%;
+}
+
+.movie-img:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
