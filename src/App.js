@@ -4,11 +4,11 @@ import movieData from './movieData';
 import Movies from './MovieBox';
 import SingleMovie from './SingleMovieCont'
 import Header from './Header'
-import getMoviePosters from './apiCalls'
+import { getMoviePosters, fetchSingleMovie } from './apiCalls'
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [individualMovie, setIndividualMovie] = useState(null)
+  const [individualMovie, setIndividualMovie] = useState('')
 
   useEffect(() => {
     getMoviePosters()
@@ -16,8 +16,8 @@ function App() {
   }, [])
 
   function showIndividualMovie(id) {
-    const selectedMovie = movies.find(movie => movie.id === id)
-    setIndividualMovie(selectedMovie)
+    fetchSingleMovie(id)
+      .then(data => setIndividualMovie(data.movie))
   }
 
   function showAllPosters() {
