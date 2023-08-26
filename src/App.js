@@ -14,11 +14,14 @@ function App() {
     setIndividualMovie(selectedMovie)
   }
 
+  function showAllPosters() {
+    setIndividualMovie(null)
+  }
 
   return (
     
     <div>
-      <Header />
+      <Header showAllPosters={showAllPosters}/>
       {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
       {individualMovie && <SingleMovie individualMovie={individualMovie} />}
     </div>
