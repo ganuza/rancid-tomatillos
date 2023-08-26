@@ -1,13 +1,19 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import movieData from './movieData';
 import Movies from './MovieBox';
 import SingleMovie from './SingleMovieCont'
 import Header from './Header'
+import getMoviePosters from './apiCalls'
 
 function App() {
-  const [movies, setMovies] = useState(movieData.movies);
+  const [movies, setMovies] = useState([]);
   const [individualMovie, setIndividualMovie] = useState(null)
+
+  useEffect(() => {
+    getMoviePosters()
+      .then(data => setMovies(data.movies))
+  }, [])
 
   function showIndividualMovie(id) {
     const selectedMovie = movies.find(movie => movie.id === id)
