@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import "./SingleMovieCont.css"
 import SingleMovieCard from "./SingleMovieCard"
 
@@ -20,7 +21,9 @@ function SingleMovie({ individualMovie }) {
   )
 }
 
-
+SingleMovie.propTypes = {
+  individualMovie: PropTypes.object.isRequired
+}
 
 
 export default SingleMovie
