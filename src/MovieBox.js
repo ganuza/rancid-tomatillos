@@ -1,5 +1,6 @@
 import "./MovieBox.css";
 import MovieCard from "./MovieCard";
+import PropTypes from 'prop-types'
 
 function Movies({ movies, showIndividualMovie }) {
   // console.log('movies', movies)
@@ -22,3 +23,8 @@ function Movies({ movies, showIndividualMovie }) {
 }
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: PropTypes.array.isRequired,
+  showIndividualMovie: PropTypes.func.isRequired
+};
