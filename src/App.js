@@ -26,8 +26,17 @@ function App() {
 
   function showIndividualMovie(id) {
     fetchSingleMovie(id)
-      .then(data => setIndividualMovie(data.movie))
-  }
+      .then(data => setIndividualMovie(data.movie)) 
+      .then(res => {
+        setError('')
+        if (res === 500) {
+          throw new Error('Something Went Wrong On The Server')
+        }
+        return res
+      })
+      .catch(error => setError(`Request Failed: ${error.message}`))
+    }
+  
 
   function showAllPosters() {
     setIndividualMovie(null)
@@ -37,9 +46,9 @@ function App() {
     
     <div>
       <Header showAllPosters={showAllPosters}/>
+      {error && <div><p>{error}</p></div>}
       {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
       {individualMovie && <SingleMovie individualMovie={individualMovie} />}
-      {error && <div><p>{error}</p></div>}
     </div>
   )
 }
