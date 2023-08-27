@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import "./Header.css"
 
 function Header({showAllPosters}) {
@@ -9,5 +10,8 @@ function Header({showAllPosters}) {
   )
 }
 
+Header.propTypes = {
+  showAllPosters: PropTypes.func.isRequired
+}
 
 export default Header
