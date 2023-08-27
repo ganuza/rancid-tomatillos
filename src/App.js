@@ -38,7 +38,7 @@ function App() {
       <Header showAllPosters={showAllPosters}/>
       {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
       {individualMovie && <SingleMovie individualMovie={individualMovie} />}
-      {error && <div><p>{error}</p><p>Put Image Here</p></div>}
+      {error && <div><p>{error}</p></div>}
     </div>
   )
 }
