@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import "./SingleMovieCard.css"
 
 function SingleMovieCard ({title, backdrop_path, id, average_rating, release_date, overview, tagline, runtime, genres}) {
@@ -13,6 +14,18 @@ function SingleMovieCard ({title, backdrop_path, id, average_rating, release_dat
       <h2>GENRES: {genres.join(' / ').split('')}</h2>
     </div>
   )
+}
+
+SingleMovieCard.propTypes = {
+  title: PropTypes.string.isRequired, 
+  backdrop_path: PropTypes.string.isRequired, 
+  id: PropTypes.number.isRequired, 
+  average_rating: PropTypes.number.isRequired, 
+  release_date: PropTypes.string.isRequired, 
+  overview: PropTypes.string.isRequired, 
+  tagline: PropTypes.string.isRequired, 
+  runtime: PropTypes.number.isRequired, 
+  genres: PropTypes.array.isRequired
 }
 
 export default SingleMovieCard
