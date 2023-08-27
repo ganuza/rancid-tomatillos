@@ -15,10 +15,11 @@ function App() {
     getMoviePosters()
       .then(data => setMovies(data.movies))
       .then(res => {
+        setError('')
         if (res === 500) {
           throw new Error('Something Went Wrong On The Server')
         }
-        return res.json()
+        return res
       })
       .catch(error => setError(`Request Failed: ${error.message}`))
     }, [])
