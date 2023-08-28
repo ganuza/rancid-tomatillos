@@ -9,7 +9,9 @@ header {
 
 .header-title {
   color: red;
-  font-size: 64px;
+  font-family: 'Limelight', cursive;
+/* font-family: 'Montserrat', sans-serif; */
+  font-size: 78px;
   text-align: center;
   margin: 0;
   flex-grow: 1;
@@ -22,6 +24,7 @@ header {
   cursor: pointer;
   background-color: rgb(10, 10, 10);
   border-radius: 30px;
+  transition: transform 0.3s;
 }
 
 .home-button:hover {
