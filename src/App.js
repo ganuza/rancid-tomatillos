@@ -1,10 +1,10 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import movieData from './movieData';
 import Movies from './MovieBox';
 import SingleMovie from './SingleMovieCont'
 import Header from './Header'
 import { getMoviePosters, fetchSingleMovie } from './apiCalls'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -47,8 +47,10 @@ function App() {
     <div>
       <Header showAllPosters={showAllPosters}/>
       {error && <div><p>{error}</p></div>}
-      {!individualMovie && <Movies movies={movies} showIndividualMovie={showIndividualMovie}/>}
-      {individualMovie && <SingleMovie individualMovie={individualMovie} />}
+      <Routes>
+        <Route path='/' element={<Movies movies={movies} />}></Route>
+        <Route path='/:id' element={<SingleMovie individualMovie={individualMovie} />}></Route>
+      </Routes>
     </div>
   )
 }
