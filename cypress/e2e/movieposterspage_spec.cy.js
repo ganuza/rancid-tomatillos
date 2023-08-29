@@ -3,7 +3,7 @@ describe('Rancid Tomatillos on-load', () => {
   beforeEach(() => {
     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
     statusCode: 200,
-    fixture: ""
+    fixture: "moviesData.json"
   })
     cy.visit('http://localhost:3000');
   });
