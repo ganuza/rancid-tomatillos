@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
 import "./Header.css"
+import { NavLink } from 'react-router-dom'
 
 function Header({showAllPosters}) {
   return (
     <header>
       <h1 className="header-title">RANCID TOMATILLOS</h1>
-      <h2 className='home-button' onClick={() => showAllPosters()}>HOME</h2>
+      <NavLink to={'/'} className='home-button'>HOME</NavLink>
     </header>
   )
 }
