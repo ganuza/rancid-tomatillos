@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import "./MovieCard.css";
+import { NavLink } from "react-router-dom";
 
 function MovieCard({ img, id, showIndividualMovie }) {
   return (
-    <div className="movie-card" onClick={() => showIndividualMovie(id)}>
+    <NavLink className="movie-card" to={`/${id}`}>
       <img className="movie-img" src={img} />
-    </div>
+    </NavLink>
   );
 }
 
