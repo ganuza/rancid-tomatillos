@@ -49,7 +49,7 @@ function App() {
       {error && <div><p>{error}</p></div>}
       <Routes>
         <Route path='/' element={<Movies movies={movies} />}></Route>
-        <Route path='/:id' element={<SingleMovie individualMovie={individualMovie} />}></Route>
+        <Route path='/:id' element={<SingleMovie showIndividualMovie={showIndividualMovie} individualMovie={individualMovie} />}></Route>
       </Routes>
     </div>
   )

@@ -11,7 +11,7 @@ function SingleMovieCard ({title, backdrop_path, id, average_rating, release_dat
       <h2>RATING: {average_rating.toFixed(1)} / 10</h2>
       <h2>RUNTIME: {runtime} MINUTES</h2>
       <h2>RELEASE DATE:  {release_date}</h2>
-      <h2>GENRES: {genres.join(' / ').split('')}</h2>
+      <h2>GENRES: {genres.join(' / ')}</h2>
     </div>
   )
 }

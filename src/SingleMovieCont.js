@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types'
 import "./SingleMovieCont.css"
 import SingleMovieCard from "./SingleMovieCard"
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
-function SingleMovie({ individualMovie }) {
-  
-  return (
+
+
+function SingleMovie({ showIndividualMovie, individualMovie }) {
+  const {id} = useParams()
+
+  useEffect(() => {
+    showIndividualMovie(id)
+  }, [])
+
+  console.log('individualMovie: ', individualMovie)
+
+  return individualMovie ? (
     <div className="single-movie-cont">
       <SingleMovieCard
         title={individualMovie.title}
@@ -18,7 +29,7 @@ function SingleMovie({ individualMovie }) {
         genres={individualMovie.genres}
       />
     </div>
-  )
+  ) : (false)
 }
 
 SingleMovie.propTypes = {
