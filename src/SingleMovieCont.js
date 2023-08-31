@@ -1,19 +1,15 @@
-import PropTypes from 'prop-types'
-import "./SingleMovieCont.css"
-import SingleMovieCard from "./SingleMovieCard"
-import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
-
-
+import PropTypes from "prop-types";
+import "./SingleMovieCont.css";
+import SingleMovieCard from "./SingleMovieCard";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function SingleMovie({ showIndividualMovie, individualMovie }) {
-  const {id} = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
-    showIndividualMovie(id)
-  }, [])
-
-  console.log('individualMovie: ', individualMovie)
+    showIndividualMovie(id);
+  }, []);
 
   return individualMovie ? (
     <div className="single-movie-cont">
@@ -29,12 +25,13 @@ function SingleMovie({ showIndividualMovie, individualMovie }) {
         genres={individualMovie.genres}
       />
     </div>
-  ) : (false)
+  ) : (
+    false
+  );
 }
 
 SingleMovie.propTypes = {
-  individualMovie: PropTypes.object.isRequired
-}
+  individualMovie: PropTypes.object,
+};
 
-
-export default SingleMovie
+export default SingleMovie;
