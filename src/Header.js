@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types'
 import "./Header.css"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+
 
 function Header({showAllPosters}) {
+  const { pathname } = useLocation()
+  console.log('pathname: ', pathname)
   return (
     <header>
       <h1 className="header-title">RANCID TOMATILLOS</h1>
-      <NavLink to={'/'} className='home-button'>HOME</NavLink>
+      {pathname === '/' ? null : 
+      <NavLink to={'/'} className='home-button'>HOME</NavLink>}
     </header>
   )
 }
