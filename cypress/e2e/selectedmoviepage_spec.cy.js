@@ -2,12 +2,12 @@ describe('Rancid Tomatillos single movie selection', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
     .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-      statusCode: 201,
-      fixture: "moviesData.json"
+      statusCode: 200,
+      fixture: "moviesData"
     })
     .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270", {
-      statusCode: 201,
-      fixture: "singleMovieData.json"
+      statusCode: 200,
+      fixture: "singleMovieData"
     })
     
   });
