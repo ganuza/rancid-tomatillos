@@ -3,6 +3,10 @@ h2 {
   color: red;
 }
 
+.single-movie-title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+}
 .single-movie-img {
   height: 500px;
   width: auto;
@@ -14,3 +18,24 @@ h2 {
   align-items: center;
 }
 
+.details-cont {
+  /* border: 3px solid black; */
+  margin-bottom: 50px;
+  height: 500px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details-article {
+  /* border: 3px solid black; */
+  color: red;
+  background-color: rgba(0, 0, 0, 0.291);
+  height: 300px;
+  width: 250px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
