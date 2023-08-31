@@ -46,7 +46,7 @@ function App() {
     
     <div>
       <Header showAllPosters={showAllPosters}/>
-      {error && <div><p>{error}</p></div>}
+      {error && <div className='error-message'><p>{error}</p></div>}
       <Routes>
         <Route path='/' element={<Movies movies={movies} />}></Route>
         <Route path='/:id' element={<SingleMovie showIndividualMovie={showIndividualMovie} individualMovie={individualMovie} />}></Route>
