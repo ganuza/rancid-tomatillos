@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./MovieCard.css";
 import { NavLink } from "react-router-dom";
 
-function MovieCard({ img, id, showIndividualMovie }) {
+function MovieCard({ img, id }) {
   return (
     <NavLink className="movie-card" to={`/${id}`}>
       <img className="movie-img" src={img} />
@@ -13,7 +13,6 @@ function MovieCard({ img, id, showIndividualMovie }) {
 MovieCard.propTypes = {
   img: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  showIndividualMovie: PropTypes.func.isRequired,
 };
 
 export default MovieCard;

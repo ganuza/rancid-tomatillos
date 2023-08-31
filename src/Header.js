@@ -5,7 +5,6 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 function Header({showAllPosters}) {
   const { pathname } = useLocation()
-  console.log('pathname: ', pathname)
   return (
     <header>
       <h1 className="header-title">RANCID TOMATILLOS</h1>

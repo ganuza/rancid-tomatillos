@@ -8,7 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [individualMovie, setIndividualMovie] = useState('')
+  const [individualMovie, setIndividualMovie] = useState()
   const [error, setError] = useState('')
 
   useEffect(() => {
