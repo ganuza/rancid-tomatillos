@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+html {
+  height: 100vh;
+}
 
 .App-header {
   background-color: #282c34;
@@ -13,4 +16,9 @@
   color: white;
 }
 
+.error-message {
+  border: 3px solid red;
+  height: 200px;
+  width: 800px;
+}
 
