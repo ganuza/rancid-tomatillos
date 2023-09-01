@@ -5,7 +5,8 @@ function getMoviePosters() {
       throw new Error("Something Went Wrong On The Server");
     }
     return res.json()
-  });
+  })
+  .catch((error) => {throw new Error("Something Went Wrong On The Server")})
 }
 
 function fetchSingleMovie(id) {
@@ -14,7 +15,8 @@ function fetchSingleMovie(id) {
       if (!res.ok) {
         throw new Error('Something Went Wrong On The Server')
       }
-      return res.json()});
+      return res.json()})
+    .catch((error) => {throw new Error("Something Went Wrong On The Server")})
 }
 
 export { getMoviePosters, fetchSingleMovie };
