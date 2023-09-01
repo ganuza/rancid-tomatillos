@@ -10,28 +10,44 @@ import ErrorMessages from "./ErrorMessages";
 function App() {
   const [movies, setMovies] = useState([]);
   const [individualMovie, setIndividualMovie] = useState();
-  const [error, setError] = useState("");
+  const [moviesError, setMoviesError] = useState('');
+  const [singleMovieError, setSingleMovieError] = useState()
+  const [isLoading, setIsLoading] = useState(true)
+  const [isGoodRequest, setIsGoodRequest] = useState(true)
 
   useEffect(() => {
     getMoviePosters()
       .then((data) => {
-        // setError("");
+        setMoviesError("");
         setMovies(data.movies)
+        setIsLoading(false)
+        setIsGoodRequest(true)
         return data
       })
-      .catch((error) => setError(`Request Failed: ${error.message}`));
+      .catch((error) => {setMoviesError(`Request Failed: ${error.message}`)
+        setIsGoodRequest(false)
+        setIsLoading(false)
+      });
   }, []);
 
+  useEffect(() => {
+    console.log('individualMovie: ', individualMovie)
+  }, [individualMovie])
   function showIndividualMovie(id) {
+    setIsLoading(true)
     fetchSingleMovie(id)
-      .then((data) => {
-        setError("");
-        setIndividualMovie(data.movie);
+    .then((data) => {
+      setSingleMovieError();
+      setIndividualMovie(data.movie);
+      setIsGoodRequest(true)
+      setIsLoading(false)
         return data;
       })
       .catch((error) => {
         console.log('im in the catch!')
-        setError(`Request Failed: ${error.message}`)
+        setIsLoading(false)
+        setIsGoodRequest(false)
+        setSingleMovieError(`Request Failed: ${error.message}`)
       console.log('error', error)});
         
   }
@@ -43,19 +59,28 @@ function App() {
   return (
     <div>
       <Header showAllPosters={showAllPosters} />
-      {error && 
+      {!isGoodRequest && !isLoading &&
         <div className="error-message">
-          <p>{error}</p>
+          <p>{moviesError}</p>
         </div>
       }
+      {/* {!isGoodRequest && 
+        <div className="error-message">
+          <p>{singleMovieError}</p>
+        </div>
+      } */}
+      
+
       <Routes>
         <Route path="/" element={<Movies movies={movies} />}></Route>
         <Route
           path="/:id"
           element={
             <SingleMovie
-              showIndividualMovie={showIndividualMovie}
-              individualMovie={individualMovie}
+            isLoading={isLoading}
+            isGoodRequest={isGoodRequest}
+            showIndividualMovie={showIndividualMovie}
+            individualMovie={individualMovie}
             />
           }
         ></Route>
