@@ -16,34 +16,29 @@ function SingleMovieCard({
       <h2 className="single-movie-title">{title}</h2>
       <h2>{tagline}</h2>
       <img className="single-movie-img" src={backdrop_path} />
-      <h2>{overview}</h2>
       <section className="details-cont">
         <article className="details-article">
-          <h2>
-            RATING:<br></br>
-            <br></br> {average_rating.toFixed(1)} / 10
+          <h2 className="details-text">
+            RATING: {average_rating.toFixed(1)} / 10
           </h2>
         </article>
         <article className="details-article">
-          <h2>
-            RUNTIME:<br></br>
-            <br></br> {runtime} MINUTES
+          <h2 className="details-text">
+            RUNTIME: {runtime} MINUTES
           </h2>
         </article>
         <article className="details-article">
-          <h2>
-            RELEASE DATE:<br></br>
-            <br></br>
-            {release_date}
+          <h2 className="details-text">
+            RELEASE DATE: {release_date}
           </h2>
         </article>
         <article className="details-article">
-          <h2>
-            GENRES:<br></br>
-            <br></br> {genres.join(" / ")}
+          <h2 className="details-text"> 
+            GENRES: {genres.join(" / ")}
           </h2>
         </article>
       </section>
+      <h2>{overview}</h2>
     </div>
   );
 }

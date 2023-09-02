@@ -8,34 +8,43 @@ h2 {
   font-size: 64px;
 }
 .single-movie-img {
+  display: flex;
   height: 500px;
   width: auto;
+  align-items: start;
 }
 
 .single-movie-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 
 .details-cont {
   /* border: 3px solid black; */
   margin-bottom: 50px;
-  height: 500px;
+  /* height: 500px; */
   width: 90%;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
+}
+
+.details-text {
+  color: red;
+  font-size: 14px;
 }
 
 .details-article {
   /* border: 3px solid black; */
   color: red;
   background-color: rgba(0, 0, 0, 0.291);
-  height: 300px;
-  width: 250px;
-  border-radius: 10px;
+  height: auto;
+  width: auto;
+  /* border-radius: 10px; */
   display: flex;
-  justify-content: center;
+  align-self: left;
   align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
