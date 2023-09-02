@@ -3,7 +3,7 @@ import "./Header.css"
 import { NavLink, useLocation } from 'react-router-dom'
 
 
-function Header({showAllPosters}) {
+function Header() {
   const { pathname } = useLocation()
   return (
     <header>
@@ -12,10 +12,6 @@ function Header({showAllPosters}) {
       <NavLink to={'/'} className='home-button'>HOME</NavLink>}
     </header>
   )
-}
-
-Header.propTypes = {
-  showAllPosters: PropTypes.func.isRequired
 }
 
 export default Header

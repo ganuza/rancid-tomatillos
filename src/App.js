@@ -10,46 +10,42 @@ import ErrorMessages from "./ErrorMessages";
 function App() {
   const [movies, setMovies] = useState([]);
   const [individualMovie, setIndividualMovie] = useState();
-  const [moviesError, setMoviesError] = useState('');
-  const [singleMovieError, setSingleMovieError] = useState()
-  const [isLoading, setIsLoading] = useState(true)
-  const [isGoodRequest, setIsGoodRequest] = useState(true)
+  const [moviesError, setMoviesError] = useState("");
+  const [singleMovieError, setSingleMovieError] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isGoodRequest, setIsGoodRequest] = useState(true);
 
   useEffect(() => {
     getMoviePosters()
       .then((data) => {
         setMoviesError("");
-        setMovies(data.movies)
-        setIsLoading(false)
-        setIsGoodRequest(true)
-        return data
-      })
-      .catch((error) => {setMoviesError(`Request Failed: ${error.message}`)
-        setIsGoodRequest(false)
-        setIsLoading(false)
-      });
-  }, []);
-
-  useEffect(() => {
-    console.log('individualMovie: ', individualMovie)
-  }, [individualMovie])
-  function showIndividualMovie(id) {
-    setIsLoading(true)
-    fetchSingleMovie(id)
-    .then((data) => {
-      setSingleMovieError();
-      setIndividualMovie(data.movie);
-      setIsGoodRequest(true)
-      setIsLoading(false)
+        setMovies(data.movies);
+        setIsLoading(false);
+        setIsGoodRequest(true);
         return data;
       })
       .catch((error) => {
-        console.log('im in the catch!')
-        setIsLoading(false)
-        setIsGoodRequest(false)
-        setSingleMovieError(`Request Failed: ${error.message}`)
-      console.log('error', error)});
-        
+        setMoviesError(`Request Failed: ${error.message}`);
+        setIsGoodRequest(false);
+        setIsLoading(false);
+      });
+  }, []);
+
+  function showIndividualMovie(id) {
+    setIsLoading(true);
+    fetchSingleMovie(id)
+      .then((data) => {
+        setSingleMovieError();
+        setIndividualMovie(data.movie);
+        setIsGoodRequest(true);
+        setIsLoading(false);
+        return data;
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setIsGoodRequest(false);
+        setSingleMovieError(`Request Failed: ${error.message}`);
+      });
   }
 
   function showAllPosters() {
@@ -58,33 +54,28 @@ function App() {
 
   return (
     <div>
-      <Header showAllPosters={showAllPosters} />
-      {!isGoodRequest && !isLoading &&
-        <div className="error-message">
-          <p>{moviesError}</p>
-        </div>
-      }
-      {/* {!isGoodRequest && 
-        <div className="error-message">
-          <p>{singleMovieError}</p>
-        </div>
-      } */}
-      
+      <Header />
 
       <Routes>
         <Route path="/" element={<Movies movies={movies} />}></Route>
         <Route
           path="/:id"
           element={
-            <SingleMovie
-            isLoading={isLoading}
-            isGoodRequest={isGoodRequest}
-            showIndividualMovie={showIndividualMovie}
-            individualMovie={individualMovie}
-            />
+            <>
+              <SingleMovie
+                isLoading={isLoading}
+                isGoodRequest={isGoodRequest}
+                showIndividualMovie={showIndividualMovie}
+                individualMovie={individualMovie}
+              />
+              { moviesError || singleMovieError && 
+              <ErrorMessages
+                moviesError={moviesError}
+                singleMovieError={singleMovieError}
+              />}
+            </>
           }
         ></Route>
-        {/* <Route path="*" element={<ErrorMessages />}></Route> */}
       </Routes>
     </div>
   );

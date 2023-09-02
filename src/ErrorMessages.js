@@ -1,12 +1,19 @@
-import './ErrorMessages.css';
+import "./ErrorMessages.css";
 
-function ErrorMessages() {
+function ErrorMessages({moviesError, singleMovieError}) {
+
   return (
-    <div className='error-message404'>
-      <h2>404 Not Found</h2>
-      <p>The page you are looking for does not exist.</p>
+    <div className="error-message404">
+      {moviesError &&
+        <div className="error-message">
+        <p>{moviesError}</p>
+      </div>}
+      {singleMovieError &&
+        <div className="error-message">
+        <p>{singleMovieError}</p>
+      </div>}
     </div>
   );
 }
 
-export default ErrorMessages
+export default ErrorMessages;

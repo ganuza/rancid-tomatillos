@@ -6,7 +6,6 @@ function getMoviePosters() {
     }
     return res.json()
   })
-  .catch((error) => {throw new Error("Something Went Wrong On The Server")})
 }
 
 function fetchSingleMovie(id) {
@@ -16,7 +15,6 @@ function fetchSingleMovie(id) {
         throw new Error('Something Went Wrong On The Server')
       }
       return res.json()})
-    .catch((error) => {throw new Error("Something Went Wrong On The Server")})
 }
 
 export { getMoviePosters, fetchSingleMovie };
