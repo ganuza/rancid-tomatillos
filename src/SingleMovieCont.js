@@ -12,11 +12,6 @@ function SingleMovie({ showIndividualMovie, individualMovie, isGoodRequest, isLo
     showIndividualMovie(id);
   }, []);
   
-  useEffect(() => {
-    console.log('individualMovie: ', individualMovie)
-  }, [individualMovie])
-  
-  if (isGoodRequest && !isLoading && individualMovie?.title) {
 
     return individualMovie ? (
       <div className="single-movie-cont">
@@ -32,29 +27,9 @@ function SingleMovie({ showIndividualMovie, individualMovie, isGoodRequest, isLo
         genres={individualMovie.genres}
         />
     </div>
-  ) : (
-    <ErrorMessages />
-    );
-  }
+  ) : null
+
   
-  // return (
-    
-  //      <div className="single-movie-cont">
-  //      {isGoodRequest && !isLoading && individualMovie?.title? && <SingleMovieCard
-  //         title={individualMovie.title}
-  //         backdrop_path={individualMovie.backdrop_path}
-  //         id={individualMovie.id}
-  //         average_rating={individualMovie.average_rating}
-  //         release_date={individualMovie.release_date}
-  //         overview={individualMovie.overview}
-  //         tagline={individualMovie.tagline}
-  //         runtime={individualMovie.runtime}
-  //         genres={individualMovie.genres}
-  //       />}
-  //       !isGoodRequest && !isLoading && <ErrorMessages />
-  //     </div>
-    
-  // )
 }
 
 SingleMovie.propTypes = {

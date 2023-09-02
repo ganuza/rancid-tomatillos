@@ -25,7 +25,6 @@ function App() {
         return data;
       })
       .catch((error) => {
-        console.log("error", error);
         setMoviesError(`Request Failed: ${error.message}`);
         setIsGoodRequest(false);
         setIsLoading(false);
@@ -43,11 +42,9 @@ function App() {
         return data;
       })
       .catch((error) => {
-        console.log("im in the catch!");
         setIsLoading(false);
         setIsGoodRequest(false);
         setSingleMovieError(`Request Failed: ${error.message}`);
-        console.log("error", error);
       });
   }
 
@@ -58,31 +55,27 @@ function App() {
   return (
     <div>
       <Header />
-      {!isGoodRequest && !isLoading && (
-        <div className="error-message">
-          <p>{moviesError}</p>
-        </div>
-      )}
-      {/* {!isGoodRequest && 
-        <div className="error-message">
-          <p>{singleMovieError}</p>
-        </div>
-      } */}
 
       <Routes>
         <Route path="/" element={<Movies movies={movies} />}></Route>
         <Route
           path="/:id"
           element={
-            <SingleMovie
-              isLoading={isLoading}
-              isGoodRequest={isGoodRequest}
-              showIndividualMovie={showIndividualMovie}
-              individualMovie={individualMovie}
-            />
+            <>
+              <SingleMovie
+                isLoading={isLoading}
+                isGoodRequest={isGoodRequest}
+                showIndividualMovie={showIndividualMovie}
+                individualMovie={individualMovie}
+              />
+              { moviesError || singleMovieError && 
+              <ErrorMessages
+                moviesError={moviesError}
+                singleMovieError={singleMovieError}
+              />}
+            </>
           }
         ></Route>
-        {/* <Route path="*" element={<ErrorMessages />}></Route> */}
       </Routes>
     </div>
   );
