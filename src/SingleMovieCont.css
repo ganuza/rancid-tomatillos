@@ -1,3 +1,4 @@
 .single-movie-cont {
   background-color: rgb(67, 67, 67);
+  min-height: 100vh;
 }

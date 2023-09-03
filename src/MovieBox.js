@@ -1,6 +1,6 @@
 import "./MovieBox.css";
 import MovieCard from "./MovieCard";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 function Movies({ movies, showIndividualMovie }) {
   const movieCards = movies.map((movie) => {
@@ -11,18 +11,14 @@ function Movies({ movies, showIndividualMovie }) {
         id={movie.id}
         showIndividualMovie={showIndividualMovie}
       />
-    )
-  })
-  return (
-    <div className="movies-box">
-      {movieCards}
-    </div>
-  )
+    );
+  });
+  return <div className="movies-box">{movieCards}</div>;
 }
 
 export default Movies;
 
 Movies.propTypes = {
   movies: PropTypes.array.isRequired,
-  showIndividualMovie: PropTypes.func
+  showIndividualMovie: PropTypes.func,
 };
