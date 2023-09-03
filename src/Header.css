@@ -10,12 +10,15 @@ header {
   color: red;
   font-family: 'Limelight', cursive;
   font-size: clamp(2rem, 1rem + 10vw, 7rem);
+  margin-right: 150px;
   display: flex;
   justify-content: center;
   justify-self: center;
 }
 
 .home-button {
+  position: absolute;
+  right: 0;
   align-self: center;
   margin-right: 20px;
   padding: 10px;

@@ -4,21 +4,22 @@ import Movies from "./MovieBox";
 import SingleMovie from "./SingleMovieCont";
 import Header from "./Header";
 import { getMoviePosters, fetchSingleMovie } from "./apiCalls";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import ErrorMessages from "./ErrorMessages";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [individualMovie, setIndividualMovie] = useState();
-  const [moviesError, setMoviesError] = useState("");
-  const [singleMovieError, setSingleMovieError] = useState();
+  const [moviesError, setMoviesError] = useState('');
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(true);
   const [isGoodRequest, setIsGoodRequest] = useState(true);
 
   useEffect(() => {
+    setMoviesError("");
     getMoviePosters()
       .then((data) => {
-        setMoviesError("");
+        // setSingleMovieError("")
         setMovies(data.movies);
         setIsLoading(false);
         setIsGoodRequest(true);
@@ -28,6 +29,7 @@ function App() {
         setMoviesError(`Request Failed: ${error.message}`);
         setIsGoodRequest(false);
         setIsLoading(false);
+        navigate('/error')
       });
   }, []);
 
@@ -35,7 +37,7 @@ function App() {
     setIsLoading(true);
     fetchSingleMovie(id)
       .then((data) => {
-        setSingleMovieError();
+        // setMoviesError('');
         setIndividualMovie(data.movie);
         setIsGoodRequest(true);
         setIsLoading(false);
@@ -44,7 +46,8 @@ function App() {
       .catch((error) => {
         setIsLoading(false);
         setIsGoodRequest(false);
-        setSingleMovieError(`Request Failed: ${error.message}`);
+        setMoviesError(`Request Failed: ${error.message}`);
+        navigate('/error')
       });
   }
 
@@ -53,8 +56,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='app'>
       <Header />
+      {/* { moviesError && 
+      <ErrorMessages
+        moviesError={moviesError}
+        // singleMovieError={singleMovieError}
+      />} */}
 
       <Routes>
         <Route path="/" element={<Movies movies={movies} />}></Route>
@@ -68,14 +76,10 @@ function App() {
                 showIndividualMovie={showIndividualMovie}
                 individualMovie={individualMovie}
               />
-              { moviesError || singleMovieError && 
-              <ErrorMessages
-                moviesError={moviesError}
-                singleMovieError={singleMovieError}
-              />}
             </>
           }
-        ></Route>
+          ></Route>
+        <Route path='/error' element={<ErrorMessages moviesError={moviesError} />}></Route>
       </Routes>
     </div>
   );

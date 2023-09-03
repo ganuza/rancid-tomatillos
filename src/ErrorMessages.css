@@ -1,5 +1,14 @@
-.error-message404 {
+/* .error-message404 {
   border: 3px solid red;
   height: 500px;
   width: 800px;
+} */
+
+.p-movies-error {
+  color: red;
+
+}
+
+.p-single-movie-error {
+  color: purple;
 }

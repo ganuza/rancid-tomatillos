@@ -1,17 +1,17 @@
 import "./ErrorMessages.css";
 
-function ErrorMessages({moviesError, singleMovieError}) {
+function ErrorMessages({moviesError}) {
 
   return (
     <div className="error-message404">
-      {moviesError &&
+      
         <div className="error-message">
-        <p>{moviesError}</p>
-      </div>}
-      {singleMovieError &&
+        <p className="p-movies-error">{moviesError}</p>
+      </div>
+      {/* {singleMovieError &&
         <div className="error-message">
-        <p>{singleMovieError}</p>
-      </div>}
+        <p className="p-single-movie-error">{singleMovieError}</p>
+      </div>} */}
     </div>
   );
 }
