@@ -27,24 +27,24 @@ This project was assigned as part of Turing School of Software Design module 3 f
   Node.js
   npm
   Git
-1. Clone the repository:
+2. Clone the repository:
   Open a terminal window.
   Navigate to the directory where you want to clone the repository.
   Run the following command:
   ```
   git clone git@github.com:ganuza/rancid-tomatillos.git
   ```
-1. Install the dependencies:
+3. Install the dependencies:
   Run the following command in the cloned repository directory:
   ```
   npm install
   ```
-1. Run the React app:
+4. Run the React app:
   Run the following command in the cloned repository directory:
   ```
   npm start
   ```
-1. Open the app in your web browser by navigating to 
+5. Open the app in your web browser by navigating to 
   ```
   http://localhost:3000
   ```
