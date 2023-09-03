@@ -1,19 +1,18 @@
 import PropTypes from "prop-types";
 import "./SingleMovieCont.css";
 import SingleMovieCard from "./SingleMovieCard";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 function SingleMovie({ showIndividualMovie, individualMovie }) {
   const { id } = useParams();
-  
+
   useEffect(() => {
     showIndividualMovie(id);
   }, []);
-  
 
-    return individualMovie ? (
-      <div className="single-movie-cont">
+  return individualMovie ? (
+    <div className="single-movie-cont">
       <SingleMovieCard
         title={individualMovie.title}
         backdrop_path={individualMovie.backdrop_path}
@@ -24,11 +23,9 @@ function SingleMovie({ showIndividualMovie, individualMovie }) {
         tagline={individualMovie.tagline}
         runtime={individualMovie.runtime}
         genres={individualMovie.genres}
-        />
+      />
     </div>
-  ) : null
-
-  
+  ) : null;
 }
 
 SingleMovie.propTypes = {

@@ -12,8 +12,6 @@ describe('Rancid Tomatillos single movie selection', () => {
     
   });
 
-  // As a user, when I click on a movie, I’m shown additional details about that movie
-
   it('should show movie details when a movie is selected', () => {
     cy.get('.movie-card').find('img')
     cy.get('.movie-card').first().click()

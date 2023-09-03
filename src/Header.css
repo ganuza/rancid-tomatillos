@@ -43,7 +43,6 @@ header {
     flex-direction: column;
   }
   .home-button {
-    /* position: none; */
     flex-direction: column;
   }
 }
