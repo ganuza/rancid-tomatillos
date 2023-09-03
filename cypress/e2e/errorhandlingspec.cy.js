@@ -4,6 +4,7 @@ describe('Error handling', () => {
       statusCode: 500
     })
     cy.visit('http://localhost:3000')
+    cy.get(ErrorMessages)
     cy.get('.error-message').should('exist')
     cy.get('.error-message').should('contain', "Request Failed: Something Went Wrong On The Server")
   })

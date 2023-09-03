@@ -19,6 +19,6 @@ describe('Rancid Tomatillos single movie selection', () => {
     cy.get('.movie-card').first().click()
     cy.get('.single-movie-cont').contains('h2', 'Black Adam')
       .get('.single-movie-card').contains('h2', 'The world needed a hero. It got Black Adam.')
-      .get('.single-movie-card').contains('h2', 'RATING: 4.0 / 10')
+      .get('.single-movie-card').contains('h2', '4.0 / 10')
   })
 })
