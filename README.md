@@ -18,12 +18,12 @@ This project was assigned as part of Turing School of Software Design module 3 f
 
 ### **CONTRIBUTORS**
 
-[Marisa Wyatt](https://github.com/Marisa5280)
-[Adrian Zabolizki](https://github.com/ganuza) 
+- [Marisa Wyatt](https://github.com/Marisa5280)
+- [Adrian Zabolizki](https://github.com/ganuza) 
 
 ### **INSTALLATION INSTRUCTIONS**
 
-1.Install the prerequisites:
+1. Install the prerequisites:
   Node.js
   npm
   Git
