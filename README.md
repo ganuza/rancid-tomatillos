@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# RANCID TOMATILLOS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### **ABSTRACT**
+This project was assigned as part of Turing School of Software Design module 3 front end.  The purpose of this project was to make an application that could take in movie data from a server and display that data in clickable cards to a user so that they can get more information on the movie. When on the singular movie page the user can navigate back to the home view of all movies and click and get information on different movies.
 
-In the project directory, you can run:
+### **APP PREVIEW**	
 
-### `npm start`
+![rancid-gif](https://github.com/ganuza/rancid-tomatillos/assets/126411245/a0f244ba-569b-42d3-abe8-947ba62361e5)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **GOALS**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Gain competency with React fundamentals
+- Test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
+- Implement responsive design principles
 
-### `npm test`
+### **CONTRIBUTORS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Marisa Wyatt](https://github.com/Marisa5280)
+[Adrian Zabolizki](https://github.com/ganuza) 
 
-### `npm run build`
+### **INSTALLATION INSTRUCTIONS**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.Install the prerequisites:
+  Node.js
+  npm
+  Git
+1. Clone the repository:
+  Open a terminal window.
+  Navigate to the directory where you want to clone the repository.
+  Run the following command:
+  ```
+  git clone git@github.com:ganuza/rancid-tomatillos.git
+  ```
+1. Install the dependencies:
+  Run the following command in the cloned repository directory:
+  ```
+  npm install
+  ```
+1. Run the React app:
+  Run the following command in the cloned repository directory:
+  ```
+  npm start
+  ```
+1. Open the app in your web browser by navigating to 
+  ```
+  http://localhost:3000
+  ```
+### **TECHNOLOGIES**
+- JavaScript
+- CSS
+- HTML5
+- React
+- React Router
+- Cypress
+- GitHub
+- GitHub Projects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **WINS + CHALLENGES**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##### WINS
+Collaboration: We helped each other learn and use new technologies to create a successful application!
+Productive Struggle: We hit several road-blocks and were able to use resources available to us to solve them (Docs, Mod3 Lessons, YouTube videos, Mentors, and Cohort mates)
+##### CHALLENGES 
+Unfamiliar technologies: React, React Router, and Cypress. We came into this project with limited experience in these techs and did a lot of learning as we went.
+Refactoring: After implementing React Router we had many issues that had to be adjusted. Our error handling, our Cypress tests, and working on the asynchronous timing of our components using states.
