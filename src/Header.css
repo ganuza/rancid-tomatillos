@@ -1,23 +1,22 @@
 header {
-  height: 175px;
+  min-height: 23vh;
   background-color: black;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   border-bottom: 3px solid red;
-  padding: 10px;
 }
 
 .header-title {
   color: red;
   font-family: 'Limelight', cursive;
-  font-size: 78px;
-  margin: 0;
+  font-size: clamp(2rem, 1rem + 10vw, 7rem);
+  display: flex;
+  justify-content: center;
+  justify-self: center;
 }
 
 .home-button {
-  position:absolute;
-  right: 0;
+  align-self: center;
   margin-right: 20px;
   padding: 10px;
   cursor: pointer;
@@ -34,4 +33,14 @@ header {
   opacity: 0.8;
   transform: scale(1.1);
   box-shadow: 0 0 20px 5px orange;
+}
+
+@media screen and (max-width: 530px) {
+  header{
+    flex-direction: column;
+  }
+  .home-button {
+    /* position: none; */
+    flex-direction: column;
+  }
 }
