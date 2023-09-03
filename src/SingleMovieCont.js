@@ -1,11 +1,10 @@
 import PropTypes from "prop-types";
 import "./SingleMovieCont.css";
 import SingleMovieCard from "./SingleMovieCard";
-import { useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { useEffect } from "react";
-import ErrorMessages from "./ErrorMessages";
 
-function SingleMovie({ showIndividualMovie, individualMovie, isGoodRequest, isLoading }) {
+function SingleMovie({ showIndividualMovie, individualMovie }) {
   const { id } = useParams();
   
   useEffect(() => {

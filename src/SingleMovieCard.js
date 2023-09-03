@@ -13,32 +13,34 @@ function SingleMovieCard({
 }) {
   return (
     <div className="single-movie-card">
-      <h2 className="single-movie-title">{title}</h2>
-      <h2>{tagline}</h2>
-      <img className="single-movie-img" src={backdrop_path} />
-      <section className="details-cont">
-        <article className="details-article">
-          <h2 className="details-text">
-            RATING: {average_rating.toFixed(1)} / 10
-          </h2>
+      <article className="card-header">
+        <h2 className="single-movie-title">{title}</h2>
+        <h2 className="tagline">{tagline}</h2>
+      </article>
+      <main className="main-wrapper">
+        <section className="left-card-wrapper">
+          <img className="single-movie-img" src={backdrop_path} />
+          <section className="details-cont">
+            <article className="details-article">
+              <h2 className="details-text">
+                 {average_rating.toFixed(1)} / 10
+              </h2>
+            </article>
+            <article className="details-article">
+              <h2 className="details-text"> {runtime} MINUTES</h2>
+            </article>
+            <article className="details-article">
+              <h2 className="details-text">RELEASE: {release_date.slice(0, 4)}</h2>
+            </article>
+            <article className="details-article">
+              <h2 className="details-text"> {genres.join(" / ")}</h2>
+            </article>
+          </section>
+        </section>
+        <article className="overview">
+          <h2 className="overview-text">{overview}</h2>
         </article>
-        <article className="details-article">
-          <h2 className="details-text">
-            RUNTIME: {runtime} MINUTES
-          </h2>
-        </article>
-        <article className="details-article">
-          <h2 className="details-text">
-            RELEASE DATE: {release_date}
-          </h2>
-        </article>
-        <article className="details-article">
-          <h2 className="details-text"> 
-            GENRES: {genres.join(" / ")}
-          </h2>
-        </article>
-      </section>
-      <h2>{overview}</h2>
+      </main>
     </div>
   );
 }
