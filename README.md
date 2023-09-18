@@ -4,6 +4,9 @@
 ### **ABSTRACT**
 This project was assigned as part of Turing School of Software Design module 3 front end.  The purpose of this project was to make an application that could take in movie data from a server and display that data in clickable cards to a user so that they can get more information on the movie. When on the singular movie page the user can navigate back to the home view of all movies and click and get information on different movies.
 
+### **DEPLOYED SITE**
+https://rancid-tomatillos-cyan.vercel.app/
+
 ### **APP PREVIEW**	
 
 ![rancid-gif](https://github.com/ganuza/rancid-tomatillos/assets/126411245/a0f244ba-569b-42d3-abe8-947ba62361e5)
